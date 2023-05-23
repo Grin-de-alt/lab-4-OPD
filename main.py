@@ -17,7 +17,7 @@ class TestConversion(unittest.TestCase):
         self.assertIn(b'Euro', response.data)
 
     def test_bad_request(self):
-        data = {'amount': '10', 'from_c': 'XYZ', 'to_c': 'EUR'}
+        data = {'amount': '10', 'from_c': 'ZWL', 'to_c': 'EUR'}
         response = self.app.post('/', data=data)
         self.assertEqual(response.status_code, 200)
         self.assertIn(b'Bad Request', response.data)
